@@ -40,5 +40,9 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
+        securityContext:  # ✅ Security applied only to this container
+          runAsUser: 0
+          runAsGroup: 0
+          fsGroup: 0
       imagePullSecrets:
       - name: github-container-registry
